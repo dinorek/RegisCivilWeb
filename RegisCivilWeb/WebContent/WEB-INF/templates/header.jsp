@@ -31,7 +31,7 @@
 						<div class="navbar-start">
 						  <a class="navbar-item" href="index.jsp">Home</a>
 							<a class="navbar-item" href="IngresarSolicitudController.do">Ingreso Solicitud</a>
-							 <a class="navbar-item" href="productos.jsp">Atender Solicitudes</a>
+							 <a class="navbar-item" href="AtenderSolicitudesController.do">Atender Solicitudes</a>
 								
 						</div>
 					</div>
