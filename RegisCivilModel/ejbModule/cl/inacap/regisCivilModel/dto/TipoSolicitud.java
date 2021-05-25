@@ -5,7 +5,22 @@ import java.util.List;
 public class TipoSolicitud {
 	private String solicitud;
 	private String retiro;
+	private String tipo;
+	
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public List<TipoSolicitud> getTipoSolicitud() {
+		return tipoSolicitud;
+	}
+	public void setTipoSolicitud(List<TipoSolicitud> tipoSolicitud) {
+		this.tipoSolicitud = tipoSolicitud;
+	}
 	private List<Solicitud> solicitudes;
+	private List<TipoSolicitud> tipoSolicitud;
 	
 	public String getSolicitud() {
 		return solicitud;

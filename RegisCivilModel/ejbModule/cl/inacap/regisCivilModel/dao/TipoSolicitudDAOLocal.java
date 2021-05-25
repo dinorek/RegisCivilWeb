@@ -13,6 +13,8 @@ public interface TipoSolicitudDAOLocal {
 	List<TipoSolicitud> getAll();
 	void delete(TipoSolicitud tipoSolicitud);
 	List<TipoSolicitud> filterByName(String tipo);
+	void buscar(TipoSolicitud tipoSolicitud);
+	List<TipoSolicitud> filterByName1(String tipo);
 	
 
 }

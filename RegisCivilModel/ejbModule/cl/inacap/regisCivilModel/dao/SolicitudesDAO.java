@@ -40,6 +40,7 @@ public class SolicitudesDAO implements SolicitudesDAOLocal {
 	public List<Solicitud> findByName(String nombre) {
 		return solicitudes.stream().filter(s->s.getNombre().toLowerCase().contains(nombre.toLowerCase())).collect(Collectors.toList());
 	}
+	
 }
 
     

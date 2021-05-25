@@ -43,4 +43,16 @@ public class TipoSolicitudDAO implements TipoSolicitudDAOLocal {
 	return tipoSolicitudes.stream().filter(t->t.getSolicitud().contains(tipo)).collect(Collectors.toList());
 	}
 
+	@Override
+	public void buscar(TipoSolicitud tipoSolicitud) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<TipoSolicitud> filterByName1(String tipo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

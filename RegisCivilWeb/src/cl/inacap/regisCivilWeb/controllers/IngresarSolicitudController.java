@@ -3,6 +3,8 @@ package cl.inacap.regisCivilWeb.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -32,6 +34,13 @@ public class IngresarSolicitudController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    class Sequencer {
+		   public AtomicInteger nSolicitud = new AtomicInteger(1);
+		   public int nSolicitud1(int initialValue) {
+		     return nSolicitud.getAndIncrement();
+		   }
+		 }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -62,6 +71,7 @@ public class IngresarSolicitudController extends HttpServlet {
 		String tipo = request.getParameter("tipo-select").trim();
 		if(tipo.isEmpty()) {
 			errores.add("Debe Ingresar el tipo de Solicitud que desea");
+			
 		}
 		
 		if (errores.isEmpty()) {
@@ -69,7 +79,10 @@ public class IngresarSolicitudController extends HttpServlet {
 			solicitud.setNombre(nombre);
 			solicitud.setRut(rutc);
 			solicitud.setTipoSolicitud(tipo);
+			
 			solicitudesDAO.save(solicitud);
+			
+			
 			
 			request.setAttribute("mensaje", "Solicitud Ingresada Correctamente");
 		} else {

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cl.inacap.regisCivilModel.dao.SolicitudesDAOLocal;
+import cl.inacap.regisCivilModel.dao.TipoSolicitudDAOLocal;
 import cl.inacap.regisCivilModel.dto.Solicitud;
+import cl.inacap.regisCivilModel.dto.TipoSolicitud;
 
 /**
  * Servlet implementation class AtenderSolicitudesController
@@ -22,7 +24,10 @@ public class AtenderSolicitudesController extends HttpServlet {
 	
 	@Inject
 	private SolicitudesDAOLocal solicitudesDAO;
-       
+    
+	@Inject
+	private TipoSolicitudDAOLocal tipoSolicitudDAO;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -37,6 +42,7 @@ public class AtenderSolicitudesController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
+		
 		if(request.getParameter("nombreEliminar") != null) {
 			String nombre = request.getParameter("nombreEliminar").trim();
 			List<Solicitud> busqueda = solicitudesDAO.findByName(nombre);
@@ -45,7 +51,11 @@ public class AtenderSolicitudesController extends HttpServlet {
 			if(solicitudAEliminar != null) {
 				solicitudesDAO.delete(solicitudAEliminar);
 			}
-		} 
+		
+			
+			
+					
+		}
 		
 		List<Solicitud> solicitudes = solicitudesDAO.getAll();
 		
@@ -58,7 +68,9 @@ public class AtenderSolicitudesController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		
+		
 		doGet(request, response);
 	}
 

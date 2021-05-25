@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registro Civil</title>
+<title class="text is-centered">Registro Civil</title>
 <link rel="stylesheet" href="vendor/bulma/css/bulma.min.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
 			<div class="column pl-6">
 			</div>
 			<div class="column pt-6">
-				<h1 class="title  has-text-white">Registro Civil</h1>
+				<h1 class="title has-text-white">Registro Civil</h1>
 			</div>
 		</div>
 		<div class="columns">
